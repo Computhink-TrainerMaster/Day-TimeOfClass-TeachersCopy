@@ -1,0 +1,26 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "features": {
+        "ghcr.io/devcontainers/features/desktop-lite:1": {}
+    },
+    "forwardPorts": [6080],  // Forwarding the desktop-lite port
+    "portsAttributes": {
+        "6080": {
+            "label": "desktop"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vsliveshare.vsliveshare",  // Live Share extension
+                "ms-python.python",  // Python extension
+                "vsls-contrib.gitdoc"  // Ensure GitDoc is listed here for automatic installation
+            ],
+            "settings": {
+                "gitdoc.enabled": true,
+                "git.autofetch": true,
+                "gitdoc.autoCommitDelay": 5000
+            }
+        }
+    }
+}
